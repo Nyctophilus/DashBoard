@@ -1,0 +1,33 @@
+.notifiy {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--dash-clr);
+    padding-bottom: 0.5rem;
+  }
+
+  .img {
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .txt {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 1rem;
+
+    p {
+      margin: 0;
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .time {
+    margin-left: auto;
+  }
+}

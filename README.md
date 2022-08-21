@@ -14,7 +14,6 @@
 <br>
 
 <!-- TABLE OF CONTENTS -->
-<details>
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#overview">Overview</a></li>
@@ -24,7 +23,6 @@
     <li><a href="#demo">Live Demo</a></li>
     <li><a href="#screenshots">Screenshots</a></li>
   </ol>
-</details>
 
 <br>
 <br>
@@ -40,6 +38,7 @@
 
 - React.js
 - Redux
+- portals
 
 ---
 

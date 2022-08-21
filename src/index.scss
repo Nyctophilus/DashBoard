@@ -1,8 +1,13 @@
+$pad: 2.5vw;
+
 :root {
+  --main-clr: #9155fd;
+  --main-clr-d: #804bdf;
   --bg-clr: #28243d;
-  --main-clr: rgb(145, 85, 253);
   --txt-clr: #cecbe3;
-  --dash-clr: rgba(231, 227, 252, 0.38);
+  --dash-clr: #e7e3fc33;
+  --alt-bg: #312d4b;
+  --hover-clr: #dbd4e50a;
 }
 
 html {
@@ -13,8 +18,35 @@ body {
   background-color: var(--bg-clr);
 
   &.light {
-    --bg-clr: rgb(244, 245, 250);
-    --txt-clr: rgba(58, 53, 65, 0.87);
+    --bg-clr: #f4f5fa;
+    --txt-clr: #3a3541de;
     --dash-clr: #a79dda61;
+    --alt-bg: #fff;
   }
+}
+
+button {
+  border: none;
+  outline: none;
+  color: transparent;
+}
+
+.container {
+  width: 85vw;
+  margin-inline: auto;
+  padding-inline: $pad;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #cecbe3;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main-clr-d);
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-clr);
 }

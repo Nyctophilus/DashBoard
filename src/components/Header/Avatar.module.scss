@@ -1,0 +1,25 @@
+.avatar {
+  display: flex;
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    aspect-ratio: 1;
+    background-color: rgb(86, 202, 0);
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(0%, -50%);
+    box-shadow: 0px 0px 0px 2.5px var(--bg-clr);
+  }
+
+  img {
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
