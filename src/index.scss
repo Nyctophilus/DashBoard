@@ -1,0 +1,20 @@
+:root {
+  --bg-clr: #28243d;
+  --main-clr: rgb(145, 85, 253);
+  --txt-clr: #cecbe3;
+  --dash-clr: rgba(231, 227, 252, 0.38);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-clr);
+
+  &.light {
+    --bg-clr: rgb(244, 245, 250);
+    --txt-clr: rgba(58, 53, 65, 0.87);
+    --dash-clr: #a79dda61;
+  }
+}
