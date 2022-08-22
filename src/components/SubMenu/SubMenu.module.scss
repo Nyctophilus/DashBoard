@@ -3,4 +3,38 @@
   transform: translateX(-100%);
   display: flex;
   flex-direction: column;
+
+  transform-origin: top right;
+  transition: all 350ms ease-in-out;
+  opacity: 0;
+}
+
+.ModalOpen {
+  animation: openModal 400ms ease-in-out forwards;
+}
+
+.ModalClose {
+  animation: closeModal 1000ms ease-in-out forwards;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%) scale(1);
+  }
+}
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100%) scale(0);
+  }
 }

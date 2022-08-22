@@ -39,6 +39,7 @@
 - React.js
 - Redux
 - portals
+- react-transition-group
 
 ---
 

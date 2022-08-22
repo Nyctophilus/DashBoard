@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   show: false,
-  location: null,
+  location: { right: 0, bottom: 0 },
   page: null,
 };
 
@@ -17,7 +17,6 @@ const SubMenuSlice = createSlice({
     },
     close(state) {
       state.show = false;
-      state.location = null;
     },
   },
 });

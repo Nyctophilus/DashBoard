@@ -13,10 +13,6 @@ const Header = () => {
   const { isDark } = useSelector((state) => state.theme);
   const dispatch = useDispatch();
 
-  const { show: isSubMenu } = useSelector(
-    (state) => state.submenu
-  );
-
   useEffect(() => {
     if (!isDark) document.body.classList.add(`light`);
     if (isDark) document.body.classList.remove(`light`);
@@ -52,7 +48,7 @@ const Header = () => {
         </div>
       </header>
 
-      {isSubMenu && <SubMenu />}
+      <SubMenu />
     </>
   );
 };

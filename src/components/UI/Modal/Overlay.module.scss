@@ -3,7 +3,8 @@
   width: 100vw;
   height: 100vh;
   inset: 0;
+  z-index: 2;
 }
 .shade {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #0b0b0bcc;
 }

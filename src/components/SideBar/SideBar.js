@@ -1,31 +1,43 @@
-import React, { useState } from "react";
 import Logo from "../UI/Logo/Logo";
 import classes from "./SideBar.module.scss";
 import sidebarData from "../../Data/sidebarData";
 import SidebarItem from "./SidebarItem";
 import { ReactComponent as ToggleBtn } from "../../assets/toggleBtn.svg";
+import { ReactComponent as Xbutton } from "../../assets/x.svg";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  uncollapse,
+  collapse,
+  setActiveBar,
+  close,
+} from "../../store/sidebar-slice";
 
-const SideBar = ({ isMain }) => {
-  const [active, setActive] = useState("dashboard");
-  const [isShow, setIsShow] = useState(true);
+const SideBar = ({ isMain, fromModal }) => {
+  const { isCollapsed, activeBar } = useSelector(
+    (state) => state.sidebar
+  );
+  const dispatch = useDispatch();
 
-  const setActiveHandler = (title) => setActive(title);
+  const setActiveHandler = (title) =>
+    dispatch(setActiveBar(title));
 
-  const showBarHanlder = () => {
-    setIsShow((prev) => !prev);
-  };
+  const collapseBarHanlder = () => dispatch(collapse());
 
   const hoverHandler = () => {
-    if (!isShow) setIsShow((prev) => !prev);
+    if (!isCollapsed) dispatch(uncollapse());
   };
 
   const sidebarClasses = isMain
-    ? isShow
+    ? isCollapsed
       ? `${classes.SideBar} ${classes.main}`
       : `${classes.SideBar} ${classes.main} ${classes.collapse}`
-    : isShow
-    ? classes.SideBar
+    : isCollapsed
+    ? `${fromModal && ` ${classes.fromModal}`} ${
+        classes.SideBar
+      }`
     : `${classes.SideBar} ${classes.collapse}`;
+
+  const closeSideBar = () => dispatch(close());
 
   return (
     <nav
@@ -33,8 +45,13 @@ const SideBar = ({ isMain }) => {
       onMouseEnter={hoverHandler}
     >
       <div className={classes.head}>
-        <Logo collapse={isShow} />
-        <ToggleBtn onClick={showBarHanlder} />
+        <Logo collapse={isCollapsed} />
+
+        {isMain && (
+          <ToggleBtn onClick={collapseBarHanlder} />
+        )}
+
+        {fromModal && <Xbutton onClick={closeSideBar} />}
       </div>
 
       {sidebarData
@@ -43,7 +60,7 @@ const SideBar = ({ isMain }) => {
           <SidebarItem
             key={item.title}
             {...item}
-            active={active}
+            active={activeBar}
             setActiveHandler={setActiveHandler}
           />
         ))}
@@ -58,7 +75,7 @@ const SideBar = ({ isMain }) => {
             <SidebarItem
               key={item.title}
               {...item}
-              active={active}
+              active={activeBar}
               setActiveHandler={setActiveHandler}
             />
           ))}
@@ -74,7 +91,7 @@ const SideBar = ({ isMain }) => {
             <SidebarItem
               key={item.title}
               {...item}
-              active={active}
+              active={activeBar}
               setActiveHandler={setActiveHandler}
             />
           ))}

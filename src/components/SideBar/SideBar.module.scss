@@ -1,10 +1,13 @@
 .SideBar {
   padding-top: 0.4rem;
   width: 400px;
+  max-width: 90%;
   user-select: none;
   transition: width 700ms ease-out;
   display: flex;
   flex-direction: column;
+  z-index: 3;
+  height: 100%;
 
   .head {
     display: flex;
@@ -113,5 +116,25 @@
 @media (max-width: 54.999rem) {
   .main {
     display: none;
+  }
+}
+
+.fromModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--alt-bg);
+  padding-inline-end: 1rem;
+  overflow-y: scroll;
+
+  transform-origin: top left;
+  transition: opacity 350ms ease-in-out,
+    width 700ms ease-out;
+  opacity: 0;
+
+  .box {
+    h2 {
+      background-color: var(--alt-bg);
+    }
   }
 }
