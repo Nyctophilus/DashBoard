@@ -1,0 +1,117 @@
+.SideBar {
+  padding-top: 0.4rem;
+  width: 400px;
+  user-select: none;
+  transition: width 700ms ease-out;
+  display: flex;
+  flex-direction: column;
+
+  .head {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 4rem;
+    justify-content: space-between;
+  }
+
+  p {
+    display: inline;
+    color: var(--txt-clr);
+  }
+
+  .box {
+    position: relative;
+    margin-top: 2rem;
+    min-width: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      top: 16.5px;
+      z-index: -1;
+      background-color: var(--dash-clr);
+    }
+
+    h2 {
+      color: var(--dash-clr);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      line-height: normal;
+      letter-spacing: 0.21px;
+      text-transform: uppercase;
+      font-weight: 500;
+      width: fit-content;
+      background-color: var(--bg-clr);
+      padding-inline: 0.4rem;
+      margin-inline-start: 1rem;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 1rem;
+    column-gap: 0.6rem;
+    border-radius: 0 2rem 2rem 0;
+    cursor: pointer;
+    transition: padding 300ms ease-out;
+
+    &.active,
+    &:hover {
+      box-shadow: 0px 4px 8px -4px rgba(19, 17, 32, 42%);
+      background-image: linear-gradient(
+        98deg,
+        rgb(198, 167, 254),
+        rgb(145, 85, 253) 94%
+      );
+    }
+
+    &:hover {
+      padding-inline-start: 2rem;
+    }
+  }
+
+  .foot {
+    margin-top: 5rem;
+    max-width: 20vw;
+  }
+
+  &.collapse {
+    width: 60px;
+
+    h2,
+    p {
+      display: none;
+    }
+
+    .box::before {
+      top: -20px;
+      width: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .item {
+      padding: 0.6rem 1rem;
+
+      &:hover,
+      &.active {
+        background: var(--hover-clr);
+      }
+    }
+
+    .foot {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 54.999rem) {
+  .main {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@
   background-color: var(--alt-bg);
   padding: 0.7rem;
   color: var(--txt-clr);
-  width: 25vw;
+  width: calc(clamp(220px, 35vw, 70vw));
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--dash-clr);

@@ -2,12 +2,12 @@ import Overlay from "./Overlay";
 
 // FIXME add GroupTranistion for animations
 
-const Modal = ({ children }) => {
+const Modal = ({ children, shade }) => {
   return (
     <>
       {children}
 
-      <Overlay />
+      <Overlay shade={shade} />
     </>
   );
 };

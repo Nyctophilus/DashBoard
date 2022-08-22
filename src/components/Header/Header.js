@@ -1,13 +1,13 @@
 import classes from "./Header.module.scss";
-import { ReactComponent as SearchIcon } from "../../assets/searchIcon.svg";
 import { ReactComponent as NotificationBill } from "../../assets/notification-bill.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import Logo from "./Logo";
 import MoonSunToggler from "./MoonSunToggler";
 import { open } from "../../store/submenu-slice";
 import SubMenu from "../SubMenu/SubMenu";
-import Avatar from "./Avatar";
+import Avatar from "../Avatar/Avatar";
+import SearchBar from "../SearchBar/SearchBar";
+import MenuBar from "../MenuBar/MenuBar";
 
 const Header = () => {
   const { isDark } = useSelector((state) => state.theme);
@@ -35,12 +35,9 @@ const Header = () => {
   return (
     <>
       <header className={classes.header}>
-        <Logo />
+        <MenuBar />
 
-        <div className={classes.search}>
-          <SearchIcon />
-          <input type="text" />
-        </div>
+        <SearchBar />
 
         <div className={classes.icons}>
           <MoonSunToggler />

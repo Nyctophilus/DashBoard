@@ -1,0 +1,33 @@
+.search-bar {
+  flex-grow: 0.9;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 1rem;
+  border: 1px solid var(--dash-clr);
+  height: 1.5rem;
+  max-width: 20rem;
+  border-radius: 1.3rem;
+  padding: 0.4rem 1rem;
+
+  @media (max-width: 54.999rem) {
+    border: none;
+    input {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 30px;
+    fill: var(--dash-clr);
+  }
+  input {
+    border: none;
+    background-color: transparent;
+    color: var(--txt-clr);
+    font-size: 1.3rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}

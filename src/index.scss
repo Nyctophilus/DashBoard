@@ -1,4 +1,4 @@
-$pad: 2.5vw;
+$pad: 2vw;
 
 :root {
   --main-clr: #9155fd;
@@ -28,13 +28,43 @@ body {
 button {
   border: none;
   outline: none;
-  color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    background-color: currentColor;
+    border-radius: 50%;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: scale(1.1);
+    width: 100%;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+
+  &:hover::after {
+    opacity: 0.2;
+  }
 }
 
 .container {
-  width: 85vw;
+  width: 95vw;
   margin-inline: auto;
   padding-inline: $pad;
+}
+svg {
+  width: 30px;
+  fill: var(--txt-clr);
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 ::-webkit-scrollbar {

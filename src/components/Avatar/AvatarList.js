@@ -1,4 +1,4 @@
-import Avatar from "../Header/Avatar";
+import Avatar from "./Avatar";
 import classes from "./AvatarList.module.scss";
 import { ReactComponent as Logout } from "../../assets/logout.svg";
 import { ReactComponent as Profile } from "../../assets/profile.svg";

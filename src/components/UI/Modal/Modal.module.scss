@@ -1,0 +1,12 @@
+.Modal {
+  z-index: 3;
+  width: 90vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--alt-bg);
+
+  h2 {
+    background-color: var(--alt-bg) !important;
+  }
+}

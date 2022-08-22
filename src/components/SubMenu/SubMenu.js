@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import Modal from "../UI/Modal/Modal";
-import AvatarList from "./AvatarList";
+import AvatarList from "../Avatar/AvatarList";
 import classes from "./SubMenu.module.scss";
 import { createPortal } from "react-dom";
 import BellList from "./Bell/BellList";

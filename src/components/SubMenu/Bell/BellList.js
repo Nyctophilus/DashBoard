@@ -1,5 +1,5 @@
 import classes from "./BellList.module.scss";
-import notifications from "../../../notificationData";
+import notifications from "../../../Data/notificationData";
 import BellItem from "./BellItem";
 import { useState } from "react";
 
