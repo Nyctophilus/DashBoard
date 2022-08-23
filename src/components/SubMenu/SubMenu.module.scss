@@ -3,6 +3,7 @@
   transform: translateX(-100%);
   display: flex;
   flex-direction: column;
+  z-index: 3;
 
   transform-origin: top right;
   transition: all 350ms ease-in-out;

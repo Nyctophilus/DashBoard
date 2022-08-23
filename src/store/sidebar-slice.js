@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isCollapsed: false,
+  isCollapsed: true,
   activeBar: "dashboard",
   show: false,
   myRef: null,

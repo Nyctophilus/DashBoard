@@ -1,0 +1,12 @@
+.Button {
+  background-color: var(--main-clr);
+  width: 100%;
+  padding-block: 0.7rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  color: #fff;
+  &:hover {
+    background-color: var(--main-clr-d);
+    box-shadow: 0px 6px 18px -8px rgba(19, 17, 32, 56%);
+  }
+}

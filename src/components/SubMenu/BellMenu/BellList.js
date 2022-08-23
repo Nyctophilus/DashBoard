@@ -2,6 +2,7 @@ import classes from "./BellList.module.scss";
 import notifications from "../../../Data/notificationData";
 import BellItem from "./BellItem";
 import { useState } from "react";
+import Button from "../../UI/Button/Button";
 
 let timer;
 
@@ -34,7 +35,7 @@ const BellList = () => {
         ))}
       </div>
       <div className={classes.sect}>
-        <button>read all notifications</button>
+        <Button>read all notifications</Button>
       </div>
     </>
   );
