@@ -3,9 +3,10 @@ import Sale from "./Sale";
 import { ReactComponent as ArrowRaise } from "../../../assets/arrowRaise.svg";
 import { ReactComponent as Dollar } from "../../../assets/dollar.svg";
 
+const days = ["Sa", "Su", "Mo", "Tu", "We", "Th", "Fr"];
+
 const WeeklySales = ({
-  days = ["Sa", "Su", "Mo", "Tu", "We", "Th", "Fr"],
-  sale = { Sa: 69.73, Mo: 22 },
+  sale = { Sa: 69.73, Mo: 22.11 },
 }) => {
   let totalSales = 0;
 
@@ -15,9 +16,7 @@ const WeeklySales = ({
 
   return (
     <>
-      <p className={classes.lightText}>
-        Total {totalSales}k Sales
-      </p>
+      <p className="lightText">Total {totalSales}k Sales</p>
 
       <div className={classes.Week}>
         {days.map((day) => (
@@ -34,7 +33,7 @@ const WeeklySales = ({
           </span>
           <div className={classes.txt}>
             <p>{totalSales}%</p>
-            <p className={classes.lightText}>sales</p>
+            <p className="lightText">sales</p>
           </div>
         </div>
 
@@ -46,7 +45,7 @@ const WeeklySales = ({
           </span>
           <div className={classes.txt}>
             <p>{totalSales}k</p>
-            <p className={classes.lightText}>sales</p>
+            <p className="lightText">sales</p>
           </div>
         </div>
       </div>

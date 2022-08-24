@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import classes from "./SideBar.module.scss";
 
 const SidebarItem = ({
@@ -7,10 +8,13 @@ const SidebarItem = ({
   active,
   setActiveHandler,
 }) => {
+  const path = title.toLowerCase().split(" ").join("-");
+
   return (
-    <div
-      className={
-        active === title
+    <NavLink
+      to={path === "dashboard" ? "DashBoard" : path}
+      className={({ isActive }) =>
+        isActive
           ? `${classes.item} ${classes.active}`
           : classes.item
       }
@@ -18,7 +22,7 @@ const SidebarItem = ({
     >
       {icon}
       <p>{title}</p>
-    </div>
+    </NavLink>
   );
 };
 

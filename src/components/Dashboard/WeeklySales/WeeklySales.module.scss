@@ -4,40 +4,40 @@
   padding-inline: 1rem;
   height: 60%;
   align-items: flex-end;
-}
 
-.DaySale {
-  position: relative;
+  .DaySale {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
 
-  .singleGraph,
-  .resultGraph {
-    position: absolute;
-    width: 30px;
-    bottom: 35px;
-    background-color: var(--main-clr);
-    left: 50%;
-    transform: translateX(-50%);
+    .singleGraph,
+    .resultGraph {
+      position: absolute;
+      width: 30px;
+      bottom: 35px;
+      background-color: var(--main-clr);
+      left: 50%;
+      transform: translateX(-50%);
+      transition: height 350ms ease-out;
+    }
+    .singleGraph {
+      height: 85%;
+      opacity: 0.15;
+    }
+
+    .resultGraph {
+      animation: RaiseHeight 1000ms ease-out forwards
+        alternate;
+    }
   }
-  .singleGraph {
-    height: 200px;
-    opacity: 0.15;
-  }
-
-  .resultGraph {
-    height: var(--sales-lvl);
-  }
-}
-
-.lightText {
-  font-size: 0.8em;
-  filter: brightness(0.7);
 }
 
 .iconing {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   .oneIcon {
     display: flex;
@@ -49,6 +49,7 @@
       border-radius: 0.6rem;
       display: flex;
       width: fit-content;
+      animation: fade-in 2s linear;
 
       &.purple {
         background-color: rgba(
@@ -80,5 +81,23 @@
         }
       }
     }
+  }
+}
+
+@keyframes RaiseHeight {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: var(--sales-lvl);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

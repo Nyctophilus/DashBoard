@@ -10,6 +10,7 @@ $pad: 2vw;
   --hover-clr: #dbd4e50a;
   --success: #56ca00;
   --danger: #ff4c51;
+  --shadow: 0 2px 10px 0 rgb(19 17 32 / 10%);
 }
 
 html {
@@ -19,7 +20,6 @@ html {
 body {
   background-color: var(--bg-clr);
   margin: 0;
-  height: 6000px;
 
   .bg-blur {
     background-color: rgba(50, 46, 77, 0.9) !important;
@@ -30,6 +30,7 @@ body {
     --txt-clr: #3a3541de;
     --dash-clr: #3a354161;
     --alt-bg: #fff;
+    --shadow: 0 2px 10px 0 rgb(94 86 105 / 10%);
 
     .bg-blur {
       background-color: rgba(255, 255, 255, 0.9) !important;
@@ -68,6 +69,10 @@ button {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 95vw;
   margin-inline: auto;
@@ -80,6 +85,11 @@ svg {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.lightText {
+  font-size: 0.8em;
+  filter: brightness(0.7);
 }
 
 ::-webkit-scrollbar {

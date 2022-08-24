@@ -1,0 +1,54 @@
+.with-shade-bg {
+  color: var(--txt-clr);
+  width: fit-content;
+  position: relative;
+  font-size: 0.8em;
+  filter: brightness(0.7);
+  position: absolute;
+  right: 50px;
+  top: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    height: 100%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    padding: 0.1rem 0.7rem;
+    border-radius: 0.6rem;
+  }
+}
+
+.expenses {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.5rem;
+  height: 80%;
+  align-items: center;
+}
+
+.listing {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  div {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+
+    span {
+      border-radius: 50%;
+      width: 1rem;
+      aspect-ratio: 1;
+      background-color: var(--custom-bg);
+    }
+    p {
+      text-transform: capitalize;
+    }
+  }
+}

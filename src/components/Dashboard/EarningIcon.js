@@ -13,7 +13,7 @@ const EarningIcon = ({
       <img src={img} alt={title} />
       <div>
         <p>{title}</p>
-        <p className={classes.lightText}>{text}</p>
+        <p className="lightText">{text}</p>
       </div>
     </div>
     <div>

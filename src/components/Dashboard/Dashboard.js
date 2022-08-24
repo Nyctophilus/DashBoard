@@ -8,12 +8,13 @@ import EarningIcon from "./EarningIcon";
 import NumberingIcon from "./NumberingIcon";
 import SmallBoards from "./SmallBoards";
 import WeeklySales from "./WeeklySales/WeeklySales";
+import YearlyRevenue from "./YearlyReport/YearlyRevenue";
 
 const Dashboard = () => {
   return (
     <section className={classes.Dashboard}>
       <BoxMaker title="Congratulations Mo! 🥳">
-        <p className={classes.lightText}>
+        <p className="lightText">
           Best seller of the month
         </p>
         <span>$42.8k</span>
@@ -55,7 +56,7 @@ const Dashboard = () => {
         <h6>
           $24,895 <span>+ 10%</span>
         </h6>
-        <p className={classes.lightText}>
+        <p className="lightText">
           Compared to $84,325 last year
         </p>
         <div className={classes.earnings}>
@@ -75,7 +76,9 @@ const Dashboard = () => {
         />
       ))}
 
-      <BoxMaker title="Revenue Report"></BoxMaker>
+      <BoxMaker title="Revenue Report">
+        <YearlyRevenue />
+      </BoxMaker>
 
       {smallBoardsData.slice(-2).map((board) => (
         <SmallBoards

@@ -1,0 +1,39 @@
+.contn {
+  height: 100%;
+  position: relative;
+  flex-basis: 3%;
+
+  .earning,
+  .expense {
+    position: absolute;
+    width: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .earning {
+    background-color: var(--success);
+    top: 48%;
+    transform: translateY(-100%);
+
+    animation: RaiseHeight 1000ms ease-out forwards
+      alternate;
+  }
+  .expense {
+    top: 52%;
+    left: 0;
+    background-color: var(--txt-clr);
+    filter: contrast(0.2);
+
+    animation: RaiseHeight 1000ms ease-out forwards
+      alternate;
+  }
+}
+
+@keyframes RaiseHeight {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: var(--expense-lvl, var(--earning-lvl));
+  }
+}

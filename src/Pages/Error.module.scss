@@ -1,0 +1,59 @@
+.Error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  row-gap: 3rem;
+  color: var(--txt-clr);
+  position: relative;
+  overflow: hidden;
+
+  & > div {
+    & > * {
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      margin-bottom: 0.8rem;
+    }
+    p {
+    }
+  }
+
+  img {
+    height: 40vh;
+  }
+
+  button {
+    width: fit-content;
+    margin-inline: auto;
+    display: block;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+  }
+  &::before {
+    content: url("https://demos.themeselection.com/materio-mui-react-nextjs-admin-template-free/images/pages/tree.png");
+    transform: scale(0.75);
+    bottom: 0;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    background-color: #e7e3fc;
+    opacity: 0.2;
+    height: 20vh;
+    z-index: -1;
+    transform: skewY(7deg);
+    bottom: -100px;
+  }
+}

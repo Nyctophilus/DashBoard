@@ -13,6 +13,7 @@
     color: var(--txt-clr);
     padding: 1.25rem;
     position: relative;
+    box-shadow: var(--shadow);
 
     @media (max-width: 30rem) {
       grid-column: span 2 !important;
@@ -27,10 +28,6 @@
     }
     p {
       font-size: 0.875rem;
-      &.lightText {
-        font-size: 0.8em;
-        filter: brightness(0.7);
-      }
 
       span {
         font-weight: bold;
@@ -42,6 +39,7 @@
       font-size: 1.5rem;
       display: block;
       margin-block: 1.3rem;
+      animation: grow 2s ease;
     }
 
     .dots {
@@ -82,6 +80,7 @@
       width: 70px;
       right: 50px;
       bottom: 20px;
+      animation: pulse 1s 2 ease-in-out alternate;
     }
   }
   & > div:nth-child(2) {
@@ -115,6 +114,7 @@
           background-color: var(--custm-bg);
           padding: 0.4rem 0.5rem 0.1rem;
           border-radius: 0.45rem;
+          animation: gelatine 500ms 3 ease-out;
 
           svg {
             fill: #fff;
@@ -135,6 +135,7 @@
   & > div:nth-child(4) {
     grid-column: span 2;
     grid-row: span 2;
+    overflow: hidden;
 
     h6 {
       margin: 3rem 0 0;
@@ -170,6 +171,7 @@
 
           img {
             width: 40px;
+            animation: bounce-in-right 1500ms ease;
           }
           p {
             margin: 0;
@@ -231,6 +233,8 @@
       width: fit-content;
       padding: 0.4rem;
       display: flex;
+      animation: gelatine 500ms 3 ease-out;
+
       svg {
         fill: #fff;
       }
@@ -271,12 +275,15 @@
       height: 110%;
       right: 30px;
       bottom: 0;
+
+      animation: fade-in 2s linear;
     }
   }
 
   & > div:nth-child(9) {
     grid-column: span 2;
-    grid-row: span 1;
+    grid-row: span 2;
+    min-height: 300px;
   }
   & > div:nth-child(10) {
     grid-column: span 2;
@@ -301,5 +308,61 @@
     opacity: 0.15;
     padding: 0.1rem 0.7rem;
     border-radius: 0.6rem;
+  }
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

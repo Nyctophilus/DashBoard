@@ -35,7 +35,7 @@ const SmallBoards = ({
     </span>
 
     <p
-      className={`${classes["with-shaded-bg"]} ${classes.lightText}`}
+      className={`${classes["with-shaded-bg"]} lightText`}
       style={{ "--custom-clr": spanColor && spanColor }}
     >
       {time}
