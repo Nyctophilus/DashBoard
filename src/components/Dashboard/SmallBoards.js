@@ -10,14 +10,18 @@ const SmallBoards = ({
   time,
   color,
   isSucess,
+  img,
+  spanColor,
 }) => (
   <BoxMaker>
-    <div
-      style={{ "--custom-bg": color }}
-      className={classes.icon}
-    >
-      {svg}
-    </div>
+    {svg && (
+      <div
+        style={{ "--custom-bg": color }}
+        className={classes.icon}
+      >
+        {svg}
+      </div>
+    )}
 
     <h6>{title}</h6>
     <p>${number}</p>
@@ -30,7 +34,13 @@ const SmallBoards = ({
       {transaction}%
     </span>
 
-    <p className={classes.lightText}>{time}</p>
+    <p
+      className={`${classes["with-shaded-bg"]} ${classes.lightText}`}
+      style={{ "--custom-clr": spanColor && spanColor }}
+    >
+      {time}
+    </p>
+    {img && <img src={img} alt={title} />}
   </BoxMaker>
 );
 

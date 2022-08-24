@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashboard";
 import Header from "../components/Header/Header";
 import SideBar from "../components/SideBar/SideBar";
@@ -12,7 +12,11 @@ const Main = () => {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="DashBoard" element={<Dashboard />} />
+          <Route
+            path=""
+            element={<Navigate to="DashBoard" replace />}
+          />
         </Routes>
       </main>
     </Layout>

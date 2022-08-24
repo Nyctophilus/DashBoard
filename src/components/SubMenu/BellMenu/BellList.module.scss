@@ -17,6 +17,16 @@
     max-height: 38vh;
     overflow-y: scroll;
   }
+
+  button {
+    &:hover {
+      box-shadow: none !important;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .head {

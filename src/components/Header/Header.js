@@ -8,6 +8,7 @@ import SubMenu from "../SubMenu/SubMenu";
 import Avatar from "../Avatar/Avatar";
 import SearchBar from "../SearchBar/SearchBar";
 import MenuBar from "../MenuBar/MenuBar";
+import useScroll from "../../hooks/use-scroll";
 
 const Header = () => {
   const { isDark } = useSelector((state) => state.theme);
@@ -28,9 +29,17 @@ const Header = () => {
     dispatch(open({ loc: { right, bottom }, page }));
   };
 
+  const isScrollingPassedHeader = useScroll();
+
   return (
     <>
-      <header className={classes.header}>
+      <header
+        className={
+          isScrollingPassedHeader
+            ? `${classes.header} ${classes.stickyBlur} bg-blur`
+            : classes.header
+        }
+      >
         <MenuBar />
 
         <SearchBar />

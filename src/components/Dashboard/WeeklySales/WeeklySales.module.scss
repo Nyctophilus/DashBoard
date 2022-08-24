@@ -1,0 +1,84 @@
+.Week {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  height: 60%;
+  align-items: flex-end;
+}
+
+.DaySale {
+  position: relative;
+
+  .singleGraph,
+  .resultGraph {
+    position: absolute;
+    width: 30px;
+    bottom: 35px;
+    background-color: var(--main-clr);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .singleGraph {
+    height: 200px;
+    opacity: 0.15;
+  }
+
+  .resultGraph {
+    height: var(--sales-lvl);
+  }
+}
+
+.lightText {
+  font-size: 0.8em;
+  filter: brightness(0.7);
+}
+
+.iconing {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+
+  .oneIcon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .with-shaded-bg {
+      padding: 0.5rem;
+      border-radius: 0.6rem;
+      display: flex;
+      width: fit-content;
+
+      &.purple {
+        background-color: rgba(
+          $color: #9155fd,
+          $alpha: 0.1
+        );
+
+        svg {
+          fill: #9155fd;
+        }
+      }
+
+      &.green {
+        background-color: rgba(
+          $color: #56ca00,
+          $alpha: 0.1
+        );
+        svg {
+          fill: #56ca00;
+        }
+      }
+    }
+
+    .txt {
+      p {
+        margin: 0;
+        &:first-child {
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+  }
+}

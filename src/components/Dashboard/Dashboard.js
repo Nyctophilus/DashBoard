@@ -7,6 +7,7 @@ import classes from "./Dashboard.module.scss";
 import EarningIcon from "./EarningIcon";
 import NumberingIcon from "./NumberingIcon";
 import SmallBoards from "./SmallBoards";
+import WeeklySales from "./WeeklySales/WeeklySales";
 
 const Dashboard = () => {
   return (
@@ -46,7 +47,9 @@ const Dashboard = () => {
         </div>
       </BoxMaker>
 
-      <div>Weekly Overview</div>
+      <BoxMaker title="Weekly Overview">
+        <WeeklySales />
+      </BoxMaker>
 
       <BoxMaker title="Total Earning">
         <h6>
@@ -65,13 +68,21 @@ const Dashboard = () => {
         </div>
       </BoxMaker>
 
-      {smallBoardsData.map((board) => (
-        <SmallBoards key={board.svg} {...board} />
+      {smallBoardsData.slice(0, -2).map((board) => (
+        <SmallBoards
+          key={board.svg + board.time}
+          {...board}
+        />
       ))}
 
-      <div>Revenue Report</div>
-      <div>Total Growth</div>
-      <div>Ratings</div>
+      <BoxMaker title="Revenue Report"></BoxMaker>
+
+      {smallBoardsData.slice(-2).map((board) => (
+        <SmallBoards
+          key={board.svg + board.time}
+          {...board}
+        />
+      ))}
     </section>
   );
 };

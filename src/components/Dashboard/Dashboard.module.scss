@@ -14,6 +14,10 @@
     padding: 1.25rem;
     position: relative;
 
+    @media (max-width: 30rem) {
+      grid-column: span 2 !important;
+    }
+
     h2 {
       margin-block: 0 0.4rem;
       font: {
@@ -93,6 +97,8 @@
       justify-content: space-between;
       margin-top: 3rem;
       padding-inline: 0.5rem;
+      flex-wrap: wrap;
+      row-gap: 1rem;
 
       .NumberingIcon {
         display: flex;
@@ -124,6 +130,7 @@
   & > div:nth-child(3) {
     grid-column: span 2;
     grid-row: span 2;
+    min-height: 400px;
   }
   & > div:nth-child(4) {
     grid-column: span 2;
@@ -214,7 +221,10 @@
   & > div:nth-child(5),
   & > div:nth-child(6),
   & > div:nth-child(7),
-  & > div:nth-child(8) {
+  & > div:nth-child(8),
+  & > div:nth-child(10),
+  & > div:nth-child(11) {
+    position: relative;
     & > div {
       border-radius: 50%;
       background-color: var(--custom-bg);
@@ -250,6 +260,17 @@
 
     & > span + p {
       margin-top: 2rem;
+      margin-inline-start: 1rem;
+      width: fit-content;
+      position: relative;
+      color: var(--custom-clr);
+    }
+
+    & > img {
+      position: absolute;
+      height: 110%;
+      right: 30px;
+      bottom: 0;
     }
   }
 
@@ -258,11 +279,27 @@
     grid-row: span 1;
   }
   & > div:nth-child(10) {
-    grid-column: span 1;
+    grid-column: span 2;
     grid-row: span 1;
   }
   & > div:nth-child(11) {
-    grid-column: span 1;
+    grid-column: span 2;
     grid-row: span 1;
+  }
+}
+
+.with-shaded-bg {
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    height: 100%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    padding: 0.1rem 0.7rem;
+    border-radius: 0.6rem;
   }
 }

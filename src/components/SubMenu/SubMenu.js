@@ -30,8 +30,6 @@ const SubMenu = () => {
     }
   }, [right, bottom]);
 
-  console.log(show);
-
   return createPortal(
     <CSSTransition
       in={show}

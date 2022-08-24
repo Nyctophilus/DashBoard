@@ -3,6 +3,18 @@
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
+  transition: all 350ms ease-out;
+
+  &.stickyBlur {
+    position: sticky;
+    top: 0;
+    padding: 1rem;
+    z-index: 2;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  }
 
   .icons {
     display: flex;

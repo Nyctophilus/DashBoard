@@ -40,6 +40,23 @@ const smallBoardsData = [
     color: "rgb(255, 180, 0)",
     isSucess: false,
   },
+  {
+    title: "Ratings",
+    number: "13",
+    transaction: "38",
+    time: "Year of 2021",
+    spanColor: "#9155fd",
+    isSucess: true,
+    img: "https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/img/9.249c7d38.png",
+  },
+  {
+    title: "Sessions",
+    number: "24.5k",
+    transaction: "22",
+    time: "Last Week",
+    isSucess: false,
+    img: "https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/img/10.c8088c90.png",
+  },
 ];
 
 export default smallBoardsData;
