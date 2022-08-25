@@ -1,0 +1,79 @@
+.Input {
+  position: relative;
+
+  &:not(:first-child) {
+    margin-top: 2.5rem;
+
+    @media (max-width: 54.999rem) {
+      margin-top: 4rem;
+    }
+  }
+
+  input {
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid var(--dash-clr);
+    transition: border-color 350ms ease;
+    width: 100%;
+    padding: 1rem;
+    color: var(--txt-clr);
+
+    &:is(:active, :focus, :focus-visible) {
+      border-color: var(--main-clr);
+
+      & + span {
+        top: 0;
+        left: 0.5rem;
+        transform: translate(0, -50%) scale(0.8);
+      }
+    }
+
+    &.inValid {
+      border-color: red;
+      animation: gelatine 500ms ease;
+    }
+  }
+
+  span {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: var(--alt-bg);
+    padding: 0.3rem 0.5rem;
+    transition: top 350ms ease, left 350ms ease,
+      transform 350ms ease;
+  }
+}
+
+.Touched {
+  top: 0 !important;
+  left: 0.5rem !important;
+  transform: translate(0, -50%) scale(0.8) !important;
+}
+
+.errorTxt {
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  transform: translateY(100%);
+  color: red;
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    transform: scaleX(1);
+  }
+  25% {
+    transform: scaleX(0.9);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+  75% {
+    transform: scaleX(0.95);
+  }
+}

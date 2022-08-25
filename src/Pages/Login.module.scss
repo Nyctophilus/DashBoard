@@ -1,0 +1,106 @@
+.LoginPage {
+  height: 100vh;
+  background-color: var(--bg-clr);
+  display: grid;
+  place-items: center;
+
+  section {
+    background-color: var(--alt-bg);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    color: var(--txt-clr);
+    border-radius: 0.4rem;
+    margin-inline: 1rem;
+    width: calc(min(80vw, 25rem));
+
+    a {
+      margin-inline: auto;
+    }
+    h1 {
+      margin-block: 2rem 0.5rem;
+    }
+
+    form {
+      .formtail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+
+        @media (max-width: 25rem) {
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        & > div {
+          display: flex;
+          align-items: center;
+          column-gap: 0.6rem;
+          cursor: pointer;
+          user-select: none;
+
+          & > span {
+            width: 1rem;
+            aspect-ratio: 1;
+            border-radius: 3px;
+            border: 2px solid var(--txt-clr);
+
+            &.checked {
+              background-color: var(--main-clr);
+              position: relative;
+              border-color: var(--main-clr);
+
+              &::after {
+                content: "✓";
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+
+            & + p {
+              text-transform: capitalize;
+              span {
+                color: var(--main-clr);
+                cursor: pointer;
+                user-select: none;
+              }
+            }
+          }
+
+          & + p {
+            text-transform: capitalize;
+            color: var(--main-clr);
+            cursor: pointer;
+            user-select: none;
+          }
+        }
+      }
+
+      button {
+        margin-top: 1rem;
+      }
+    }
+
+    form {
+      margin-top: 2rem;
+
+      & + p {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.3rem 0.5rem;
+
+        span {
+          color: var(--main-clr);
+          cursor: pointer;
+          user-select: none;
+        }
+      }
+    }
+  }
+}
