@@ -1,8 +1,13 @@
 import Button from "../components/UI/Button/Button";
 import classes from "./Error.module.scss";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Error = () => {
+  const { isLoggedIn } = useSelector(
+    (state) => state.login
+  );
+
   return (
     <div className={classes.Error}>
       <div>
@@ -18,7 +23,7 @@ const Error = () => {
         alt="worried man"
       />
 
-      <NavLink to="/">
+      <NavLink to={isLoggedIn ? "/" : "/login"}>
         <Button>back to home</Button>
       </NavLink>
     </div>

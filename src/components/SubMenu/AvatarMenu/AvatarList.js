@@ -7,8 +7,19 @@ import { ReactComponent as Chat } from "../../../assets/chat.svg";
 import { ReactComponent as Settings } from "../../../assets/gear.svg";
 import { ReactComponent as Pricing } from "../../../assets/dollar.svg";
 import { ReactComponent as FAQ } from "../../../assets/faq.svg";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/login-slice";
+import { useNavigate } from "react-router-dom";
 
 const AvatarList = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
   return (
     <>
       <div className={classes.heading}>
@@ -61,7 +72,7 @@ const AvatarList = () => {
         </div>
       </div>
       <div className={classes.sect}>
-        <div>
+        <div onClick={logoutHandler}>
           <button className={classes.svg}>
             <Logout />
           </button>

@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../components/UI/Button/Button";
 import Input from "../components/UI/Input/Input";
 import Logo from "../components/UI/Logo/Logo";
+import { signin, signup } from "../hooks/LoginAPI";
 import useValidate from "../hooks/use-validate";
+import { login } from "../store/login-slice";
 import classes from "./Login.module.scss";
 
 const usernameValidation = (v) =>
@@ -16,6 +20,15 @@ const passwordValidation = (v) => v.length > 7;
 const Login = () => {
   const [haveAccount, setHaveAccount] = useState(true);
   const [isCheck, setIsCheck] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const isRegister = !!useLocation().search.slice(
+    useLocation().search.indexOf("=") + 1
+  );
+  useEffect(() => {
+    if (isRegister) setHaveAccount(false);
+  }, [isRegister]);
 
   const formToggleHandler = () =>
     setHaveAccount((prev) => !prev);
@@ -57,6 +70,42 @@ const Login = () => {
       )
         return;
     }
+
+    if (!haveAccount) {
+      signup({
+        username: usernameValidator.value,
+        email: emailValidator.value,
+        password: passwordValidator.value,
+      })
+        .then(({ data, expTime }) =>
+          dispatch(
+            login({
+              token: data.idToken,
+              expTime: expTime.toISOString(),
+            })
+          )
+        )
+        .then((_) => {
+          navigate("/");
+        });
+    }
+
+    if (haveAccount)
+      signin({
+        email: emailValidator.value,
+        password: passwordValidator.value,
+      })
+        .then(({ data, expTime }) =>
+          dispatch(
+            login({
+              token: data.idToken,
+              expTime: expTime.toISOString(),
+            })
+          )
+        )
+        .then((_) => {
+          navigate("/");
+        });
 
     usernameValidator.OnReset();
     emailValidator.OnReset();

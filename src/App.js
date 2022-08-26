@@ -1,8 +1,10 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import classes from "./App.module.scss";
 import Main from "./Pages/Main";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Loading from "./Pages/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { initializeToken } from "./store/login-slice";
 
 const Error = lazy(() => import("./Pages/Error"));
 const Login = lazy(() => import("./Pages/Login"));
@@ -15,6 +17,16 @@ const AccountSettings = lazy(() =>
 );
 
 const App = () => {
+  const { isLoggedIn } = useSelector(
+    (state) => state.login
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(`init token`);
+    dispatch(initializeToken());
+  }, [dispatch]);
+
   return (
     <div className={classes.app}>
       <Suspense fallback={<Loading />}>
@@ -25,10 +37,12 @@ const App = () => {
           />
 
           <Route path="/" element={<Main />}>
-            <Route
-              path="/DashBoard"
-              element={<Dashboard />}
-            />
+            {isLoggedIn && (
+              <Route
+                path="/DashBoard"
+                element={<Dashboard />}
+              />
+            )}
 
             <Route
               path="/account-settings"
@@ -39,6 +53,12 @@ const App = () => {
           </Route>
 
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/register"
+            element={
+              <Navigate to="/login?auth=false" replace />
+            }
+          />
 
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<Error />} />
