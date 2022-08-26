@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_dashboard=self.webpackChunkreact_dashboard||[]).push([[933],{933:function(e,t,a){a.r(t);a(791);var c=a(184);t.default=function(){return(0,c.jsx)("h1",{children:"AccountSettings"})}}}]);
+//# sourceMappingURL=933.e9a271e5.chunk.js.map

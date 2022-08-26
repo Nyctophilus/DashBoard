@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_dashboard=self.webpackChunkreact_dashboard||[]).push([[867],{867:function(e,a,r){r.r(a);r(791);var c=r(184);a.default=function(){return(0,c.jsx)("h1",{children:"Invoice"})}}}]);
+//# sourceMappingURL=867.0f8d0e82.chunk.js.map

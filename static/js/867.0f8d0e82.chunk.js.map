@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/867.0f8d0e82.chunk.js","mappings":"iJAMA,UAJgB,WACd,OAAO,mCACR,C","sources":["Pages/Invoice.js"],"sourcesContent":["import React from \"react\";\r\n\r\nconst Invoice = () => {\r\n  return <h1>Invoice</h1>;\r\n};\r\n\r\nexport default Invoice;\r\n"],"names":[],"sourceRoot":""}
