@@ -72,6 +72,9 @@ This project require some prequesites and dependenscies to be installed, you can
 ### Preview Image
 
 ![Preview](preview.png)
+![Preview1](preview1.png)
+![Preview2](preview2.png)
+![Preview3](preview3.png)
 
 ## Preview
 
@@ -79,7 +82,7 @@ This project require some prequesites and dependenscies to be installed, you can
 
 ## Trial Credentials
 
-email: mo@cs.mo
-password: 12345678
+- email: mo@cs.mo
+- password: 12345678
 
 <p align="right">(<a href="#top">back to top</a>)</p>
