@@ -23,8 +23,10 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(`init token`);
-    dispatch(initializeToken());
+    if (localStorage.getItem("token")) {
+      console.log(`init token`);
+      dispatch(initializeToken());
+    }
   }, [dispatch]);
 
   return (
@@ -33,7 +35,12 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Navigate to="/DashBoard" replace />}
+            element={
+              <Navigate
+                to={isLoggedIn ? "/DashBoard" : "/login"}
+                replace
+              />
+            }
           />
 
           <Route path="/" element={<Main />}>

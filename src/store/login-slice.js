@@ -30,8 +30,10 @@ const retriveStoredToken = () => {
 };
 
 const logoutHandler = (state) => {
-  state.isLoggedIn = false;
-  state.token = null;
+  if (state) {
+    state.isLoggedIn = false;
+    state.token = null;
+  }
 };
 
 const initialState = {

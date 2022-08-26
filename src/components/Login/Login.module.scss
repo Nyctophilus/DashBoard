@@ -3,6 +3,7 @@
   background-color: var(--bg-clr);
   display: grid;
   place-items: center;
+  overflow: hidden;
 
   section {
     background-color: var(--alt-bg);
@@ -101,6 +102,36 @@
           user-select: none;
         }
       }
+    }
+  }
+
+  .bgs {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: #e7e3fc20;
+    height: 20vh;
+    z-index: 1;
+    transform: skewY(5deg) translateY(65%);
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+    }
+
+    &::before {
+      content: url(https://demos.themeselection.com/materio-mui-react-nextjs-admin-template-free/images/pages/tree.png);
+      right: 0;
+      transform: skewY(-5deg) scaleX(-1)
+        translate(20%, -100%) scale(1.2);
+    }
+
+    &::after {
+      content: url(https://demos.themeselection.com/materio-mui-react-nextjs-admin-template-free/images/pages/auth-v1-tree.png);
+      left: 0;
+      transform: skewY(-5deg) translateY(-50%);
     }
   }
 }

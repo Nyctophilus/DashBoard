@@ -1,8 +1,6 @@
 import classes from "./Expense.module.scss";
 
 const Expense = ({ month, earnVsExpense }) => {
-  console.log(earnVsExpense);
-
   const earnlvl = earnVsExpense.earn / 2;
   const expenselvl = earnVsExpense.expense / 2;
 

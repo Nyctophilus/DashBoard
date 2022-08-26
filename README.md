@@ -77,4 +77,9 @@ This project require some prequesites and dependenscies to be installed, you can
 
 [![Netlify Status]()](https://react-foodorder-cart.netlify.app/)
 
+## Trial Credentials
+
+email: mo@cs.mo
+password: 12345678
+
 <p align="right">(<a href="#top">back to top</a>)</p>

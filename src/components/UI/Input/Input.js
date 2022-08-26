@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import classes from "./Input.module.scss";
 
 const Input = ({
@@ -10,6 +11,11 @@ const Input = ({
   OnBlur,
   OnChange,
 }) => {
+  const inputRef = useRef();
+
+  const activateInputHandler = () =>
+    inputRef.current.focus();
+
   return (
     <div className={classes.Input}>
       <input
@@ -19,8 +25,12 @@ const Input = ({
         onChange={OnChange}
         onBlur={OnBlur}
         className={hasError ? classes.inValid : ""}
+        ref={inputRef}
       />
-      <span className={hasTouched ? classes.Touched : ""}>
+      <span
+        className={hasTouched ? classes.Touched : ""}
+        onClick={activateInputHandler}
+      >
         {type}
       </span>
       {hasError && (
