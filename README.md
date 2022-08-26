@@ -75,7 +75,7 @@ This project require some prequesites and dependenscies to be installed, you can
 
 ## Preview
 
-[![Netlify Status]()](https://react-foodorder-cart.netlify.app/)
+[![Netlify Status]()]()
 
 ## Trial Credentials
 
