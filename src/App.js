@@ -1,16 +1,14 @@
 import { lazy, Suspense, useEffect } from "react";
 import classes from "./App.module.scss";
 import Main from "./Pages/Main";
+import Login from "./Pages/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Loading from "./Pages/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { initializeToken } from "./store/login-slice";
 
 const Error = lazy(() => import("./Pages/Error"));
-const Login = lazy(() => import("./Pages/Login"));
-const Dashboard = lazy(() =>
-  import("./components/Dashboard/Dashboard")
-);
 const Invoice = lazy(() => import("./Pages/Invoice"));
 const AccountSettings = lazy(() =>
   import("./Pages/AccountSettings")
