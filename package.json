@@ -2,6 +2,7 @@
   "name": "react_dashboard",
   "version": "0.1.0",
   "private": false,
+  "homepage": "https://github.com/Nyctophilus/DashBoard",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "node-sass": "^7.0.1",
