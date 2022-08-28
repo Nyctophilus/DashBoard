@@ -105,3 +105,7 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--main-clr);
 }
+
+::selection {
+  background-color: #9055fd55;
+}

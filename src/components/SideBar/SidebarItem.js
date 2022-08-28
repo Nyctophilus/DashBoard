@@ -12,7 +12,7 @@ const SidebarItem = ({
 
   return (
     <NavLink
-      to={path === "dashboard" ? "DashBoard" : path}
+      to={path === "dashboard" ? "/" : path}
       className={({ isActive }) =>
         isActive
           ? `${classes.item} ${classes.active}`
