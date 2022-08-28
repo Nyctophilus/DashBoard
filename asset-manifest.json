@@ -1,7 +1,11 @@
 {
   "files": {
-    "main.css": "/DashBoard/static/css/main.f4130d9f.css",
-    "main.js": "/DashBoard/static/js/main.7efe6a51.js",
+    "main.css": "/DashBoard/static/css/main.1b7bfcb1.css",
+    "main.js": "/DashBoard/static/js/main.a459d88e.js",
+    "static/css/16.d3a75ee2.chunk.css": "/DashBoard/static/css/16.d3a75ee2.chunk.css",
+    "static/js/16.4eb2f53c.chunk.js": "/DashBoard/static/js/16.4eb2f53c.chunk.js",
+    "static/css/819.d5936ec7.chunk.css": "/DashBoard/static/css/819.d5936ec7.chunk.css",
+    "static/js/819.28a23783.chunk.js": "/DashBoard/static/js/819.28a23783.chunk.js",
     "static/css/364.8ba4d312.chunk.css": "/DashBoard/static/css/364.8ba4d312.chunk.css",
     "static/js/364.eceb6c2a.chunk.js": "/DashBoard/static/js/364.eceb6c2a.chunk.js",
     "static/js/867.0f8d0e82.chunk.js": "/DashBoard/static/js/867.0f8d0e82.chunk.js",
@@ -40,15 +44,19 @@
     "static/media/invoice.svg": "/DashBoard/static/media/invoice.ba13d9151e51c037b306e48f6af6354a.svg",
     "static/media/chart.svg": "/DashBoard/static/media/chart.b4820ef12180d575877ea3b44d0522c3.svg",
     "static/media/menuBar.svg": "/DashBoard/static/media/menuBar.8d855b2f4f46c4b0eaaa1d7ef4fe256a.svg",
-    "main.f4130d9f.css.map": "/DashBoard/static/css/main.f4130d9f.css.map",
-    "main.7efe6a51.js.map": "/DashBoard/static/js/main.7efe6a51.js.map",
+    "main.1b7bfcb1.css.map": "/DashBoard/static/css/main.1b7bfcb1.css.map",
+    "main.a459d88e.js.map": "/DashBoard/static/js/main.a459d88e.js.map",
+    "16.d3a75ee2.chunk.css.map": "/DashBoard/static/css/16.d3a75ee2.chunk.css.map",
+    "16.4eb2f53c.chunk.js.map": "/DashBoard/static/js/16.4eb2f53c.chunk.js.map",
+    "819.d5936ec7.chunk.css.map": "/DashBoard/static/css/819.d5936ec7.chunk.css.map",
+    "819.28a23783.chunk.js.map": "/DashBoard/static/js/819.28a23783.chunk.js.map",
     "364.8ba4d312.chunk.css.map": "/DashBoard/static/css/364.8ba4d312.chunk.css.map",
     "364.eceb6c2a.chunk.js.map": "/DashBoard/static/js/364.eceb6c2a.chunk.js.map",
     "867.0f8d0e82.chunk.js.map": "/DashBoard/static/js/867.0f8d0e82.chunk.js.map",
     "933.e9a271e5.chunk.js.map": "/DashBoard/static/js/933.e9a271e5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4130d9f.css",
-    "static/js/main.7efe6a51.js"
+    "static/css/main.1b7bfcb1.css",
+    "static/js/main.a459d88e.js"
   ]
 }
