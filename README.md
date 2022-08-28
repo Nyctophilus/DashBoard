@@ -32,7 +32,7 @@
 
 ## Overview
 
-### This is a Dashboard which used a lot of react functionality to create. It has Main, login, Register, Error Pages. user login authentication with firebase login tokens. Redux/toolkit used in state management.
+### This is a Dashboard which used a lot of react functionality to create. It has Main, login, Register, Error Pages. user login authentication with firebase login tokens (automatic login, automatic logout on token expires). Redux/toolkit used in state management.
 
 ## Stack
 
